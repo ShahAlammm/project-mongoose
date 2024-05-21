@@ -4,7 +4,7 @@ import {
   LocalGuardian,
   Student,
   UserName,
-} from './student.interface';
+} from './student/student.interface';
 
 const userNameSchema = new Schema<UserName>({
   firstName: {
@@ -78,6 +78,8 @@ const studentSchema = new Schema<Student>({
   permanentAddress: { type: String, required: true },
   guardian: guardianSchema,
   localGuardian: localGuardianSchema,
+  profileImg: { type: String, required: true },
+  isActive: ['active', 'blocked'],
 });
 
-const User = model<Student>('student', studentSchema);
+export const StudentModel = model<Student>('student', studentSchema);
