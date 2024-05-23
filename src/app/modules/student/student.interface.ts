@@ -40,7 +40,7 @@ export type TStudent = {
 };
 
 export type StudentMethods = {
-  isUserExist(id: string): Promise<TStudent>;
+  isUserExists(id: string): Promise<TStudent | null>;
 };
 
 export type StudentModel = Model<
